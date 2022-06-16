@@ -4,12 +4,11 @@
  * @return {number}
  */
 var countOdds = function(low, high) {
-    let count=0
-    for(let i =low;i<=high;i++){
-        if(i%2!==0)
-            count++
-        else
-            continue;
+    if(low%2===0){
+        low++
     }
-    return count
+    if(high%2===0){
+        high--
+    }
+    return (high-low)/2 +1
 };
