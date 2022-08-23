@@ -13,16 +13,11 @@ var isIsomorphic = function(s, t) {
     const obj1 = {};
     const obj2 = {};
     for(let i = 0; i < s.length; i++) {
-        const letter = s[i];
-        const tLetter = t[i];
-        if (!obj2[tLetter]) {
-            obj2[tLetter] = letter;
-        }
-        if (!obj1[letter]) {
-            obj1[letter] = tLetter;
-        }
-        if (obj1[letter] !== tLetter || obj2[tLetter] !== letter) {
-            return false;
+        if(obj1[s[i]] !== obj2[t[i]]){
+            return false
+        }else{
+            obj1[s[i]]=i;
+            obj2[t[i]]=i
         }
     }
     return true;
